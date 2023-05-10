@@ -1,0 +1,170 @@
+<html>
+	<head>
+		
+		<title>Registration Form | HEC Institutions</title>
+	</head>
+	
+	<body style="background-image:url('formbg.jpg'); background-size:cover; background-repeat:no-repeat; background-attachment:fixed;">
+		<iframe src="header.html" name="iframe_header" width="100%" height="240px" style="border: none;"></iframe>
+		<form action="submitform.html" onsubmit="return validateForm()" method="GET" name="myForm">
+			<h1 style="font-family:Times New Roman; color:White; font-size: 35px" align="center">Fill the form and register for one-one counseling</h1>
+			<table border="0" cellspacing="4" cellpadding="4" name="studinfotbl" width="100%">
+				<tr>
+					<td style="font-family: Georgia; font-size: 18px; color:sandybrown;" width="14%">Name*</td>
+					<td width="86%"><input type="text" name="studentname" id="studentname"/></td>
+				</tr>
+				<tr>
+					<td style="font-family: Georgia; font-size: 18px; color:sandybrown;">Gender*</td>
+					<td style="font-family: Georgia; font-size: 18px; color:sandybrown;">
+						<input type="radio" value="Male" name="gender" id="gender">Male
+						<input type="radio" value="Female" name="gender" id="gender">Female
+					</td>
+				</tr>
+				<tr>
+					<td style="font-family: Georgia; font-size: 18px; color:sandybrown;">DOB*</td>
+					<td><input type="date" name="dob" id="dob"/></td>
+				</tr>
+				<tr>
+					<td style="font-family: Georgia; font-size: 18px; color:sandybrown;">E-mail*</td>
+					<td><input type="email" name="mail" id="mail"/></td>
+				</tr>
+				<tr>
+					<td style="font-family: Georgia; font-size: 18px; color:sandybrown;">Contact*</td>
+					<td><input type="text" name="cont" id="cont"/></td>
+				</tr>
+			</table>
+			<table width="50%">
+				<tr>
+					<td width="20%">
+						<table style="border: Solid 1px Gray;" cellspacing="4" cellpadding="4" name="subjecttbl">
+							<tr>
+								<td style="font-family: Georgia; font-size: 24px; color:sandybrown; font-weight:bold;" colspan="2" align="center">12th Marks</td>
+							</tr>
+							<tr>
+								<th style="font-family: Georgia; font-size: 18px; color:sandybrown;">Subjects</th>
+								<th style="font-family: Georgia; font-size: 18px; color:sandybrown;">Marks</th>
+							</tr>
+							<tr>
+								<td style="font-family: Georgia; font-size: 18px; color:sandybrown;">Physics</td>
+								<td align="center"><input type="number" name="txtpm" id="txtpm" min="0" max="100"/></td>
+							</tr>
+							<tr>
+								<td style="font-family: Georgia; font-size: 18px; color:sandybrown;">Chemistry</td>
+								<td align="center"><input type="number" name="txtcm" id="txtcm" min="0" max="100"/></td>
+							</tr>
+							<tr>
+								<td width="10%" style="font-family: Georgia; font-size: 18px; color:sandybrown;">Mathematics</td>
+								<td width="10%" align="center"><input type="number" name="txtmm" id="txtmm" min="0" max="100"/></td>
+							</tr>
+						</table>
+					</td>
+					<td width="30%"><input type="button" name="getcutoff" id="getcutoff" value="Get Cutoff" onclick="funcGetCutoff();" style="border-radius:15px; width:150px; height:50px; font-size:20px"></td>
+				</tr>
+			</table>
+			
+			<table border="0" cellspacing="4" cellpadding="4" name="coursetbl" style="width:100%;">
+				<tr>
+					<td style="font-family: Georgia; font-size: 18px; color:sandybrown;" width="14%">Cutoff</td>
+					<td style="font-family: Georgia; font-size: 18px; color:sandybrown;" width="86%"><label id="cutoff"/></td>
+				</tr>
+				<tr>
+					<td style="font-family: Georgia; font-size: 18px; color:sandybrown;">Preferred Course*</td>
+					<td>
+						<select id="course" name="course">
+							<option value="Select">Select</option>
+							<option value="B.E Mechanical">B.E Mechanical Engineering</option>
+							<option value="EEE">B.E EEE</option>
+							<option value="ECE">B.E ECE</option>
+							<option value="B.Tech AI-DS">B.Tech. AI & Data Science</option>
+							<option value="B.Tech AI-ML">B.E AI & Machine Learning</option>
+							<option value="B.E CSE">B.E CSE</option>
+							<option value="B.E Cyber Security">B.E Cyber Security</option>
+							<option value="B.Tech Mechatronics">B.Tech Mechatronics</option>
+							<option value="B.E Civil">B.E Civil Engineering</option>
+							<option value="B.E Biomedical">B.E Biomedical Engineering</option>
+						</select>
+					</td>
+				</tr>
+			</table>
+			
+			<input type="submit" value="Submit" style="border-radius: 15px; width:150px; height:50px; font-size: 20px">
+		</form>
+		<br>
+		<script type="application/javascript">
+			function validateForm() {
+			  var x = document.forms["myForm"]["studentname"].value;
+			  if (x == "") {
+				  alert("Name must be filled out!");
+				  return false;
+			  }
+			  else if(x.length < 3){
+				  alert("Name's length should be>=3!");
+				  return false;
+				   }
+			  
+			  var gender = document.forms["myForm"]["gender"].value;
+			  if(gender==""){
+					alert("Select Gender!");
+					return false;
+			  }
+			  
+			  var dob = document.forms["myForm"]["dob"].value;
+			  if(dob==""){
+				  alert("Select DOB!");
+				  return false;
+			  }
+			  
+			  var mail = document.forms["myForm"]["mail"].value;
+			  if(mail==""){
+				  alert("Enter E-mail!");
+				  return false;
+			  }
+			  
+			  var cont = document.forms["myForm"]["cont"].value;
+			  if(cont==""){
+				  alert("Enter Contact Number!");
+				  return false;
+			  }
+			  else if(cont.length!=8 && cont.length!=10){
+				  alert("Invalid Contact Number! Length should be 8 or 10!");
+				  return false;
+			  }
+			  
+			  var c = document.getElementById("course");
+			  if (c.value=="Select") {
+				  alert("Select your preferred course!");
+				  return false;
+			  }
+		  }
+		  
+		  function funcGetCutoff()
+		  {
+			  var pm = document.forms["myForm"]["txtpm"].value;
+			  var cm = document.forms["myForm"]["txtcm"].value;
+			  var mm = document.forms["myForm"]["txtmm"].value;
+			  
+			  if (pm=="" || cm=="" || mm==""){
+				  alert("Enter the Marks for all Subjects!");
+				  return false;
+			  }
+			  else if (pm>100 || cm>100 || mm>100)
+			  {
+				  alert("Invalid Marks Entered! Maximum Mark is 100!");
+				  return false;
+			  }
+			  else{
+				  var n_pm = Number(pm);
+				  var n_cm = Number(cm);
+				  var n_mm = Number(mm);
+				  
+				  var co = document.getElementById('cutoff');
+				  co.innerHTML = (n_pm/2) + (n_cm/2) + n_mm;
+			  }
+			  var selectBox = document.getElementById("course");
+  			  var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+   	 	 	  localStorage.setItem("selectedOption", selectedValue);
+		  }
+		  </script>
+		  <iframe src="footer.html" name="iframe_footer" width="100%" height="240px" style="border: none;"></iframe>
+	</body>
+</html>

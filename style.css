@@ -1,0 +1,78 @@
+.sitebg{
+  background-image:url('bggif.gif');
+  background-color: grey;
+  background-blend-mode: multiply;
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-attachment:fixed;
+}
+.first
+{
+	font-family:Georgia;
+	color: #080484;
+	text-align:center;
+}
+.one
+{
+	text-align: center;
+    font-size: 30px;
+    color: white;
+    padding: 10px;
+
+    justify-content: center;
+    height: 150px;
+    background-image:url("headimg.jpg"); 
+  background-blend-mode: multiply;
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-attachment:fixed;
+  	color:red;
+  font-family:Verdana;
+}
+.clglogo
+{
+	float:"left";
+	width: 150px;
+	height: 150px;
+}
+.about
+{
+  text-align: justify;
+	font-family:Verdana;
+	color:white;
+	font-size:20px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+.navbar {
+  overflow: hidden;
+  height: 50px;
+  background-color: navy;
+}
+.navbar a {
+  float: left;
+  font-size: 25px;
+  color: white;
+  text-align: left;
+  padding: 10px 15px;
+  text-decoration: none;
+}
+.footer{
+    background-image: url("headimg.jpg");
+    height:100%;
+    width:100%;
+}
+.subtitle{
+    font-size:50px; color: white; font-family: Times New Roman; text-align: center;
+}
+.dept
+{
+    font-family: Verdana;
+	color:white;
+	font-size:25px;
+}
+.dept a{
+    font-size:20px;
+	text-decoration:none;
+	color:White;
+}

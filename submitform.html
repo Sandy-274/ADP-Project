@@ -1,0 +1,87 @@
+<html>
+	<head>
+        <title>Submission Confirmation | HEC Institutions</title>
+    </head>
+	<body style="background-image:url('formbg.jpg'); background-size:cover; background-repeat:no-repeat; background-attachment:fixed;">
+		<iframe src="header.html" name="iframe_header" width="100%" height="240px" style="border: none"></iframe>
+            <h1 style="font-family:Verdana; color:sandybrown;">Confirm the Details:</h1>
+
+            <table border="0" cellspacing="4" cellpadding="4" name="studinfoconftbl" width="100%">
+                <tr>
+                    <td style="font-family: Georgia; font-size: 18px; color:sandybrown;" width="15%">Name</td>
+                    <td width="85%" style="font-family: Georgia; font-size: 18px; color:sandybrown; font-weight: bold;"><p id="studentname"/>></td>
+                </tr>
+                <tr>
+                    <td style="font-family: Georgia; font-size: 18px; color:sandybrown;">Gender</td>
+                    <td style="font-family: Georgia; font-size: 18px; color:sandybrown; font-weight: bold;"><label id="gender"/></td>
+                </tr>
+                <tr>
+                    <td style="font-family: Georgia; font-size: 18px; color:sandybrown;">DOB</td>
+                    <td style="font-family: Georgia; font-size: 18px; color:sandybrown; font-weight: bold;"><label id="dob"/></td>
+                </tr>
+                <tr>
+                    <td style="font-family: Georgia; font-size: 18px; color:sandybrown;">E-mail</td>
+                    <td style="font-family: Georgia; font-size: 18px; color:sandybrown; font-weight: bold;"><label id="mail"/></td>
+                </tr>
+                <tr>
+                    <td style="font-family: Georgia; font-size: 18px; color:sandybrown;">Contact</td>
+                    <td style="font-family: Georgia; font-size: 18px; color:sandybrown; font-weight: bold;"><label id="cont"/></td>
+                </tr>
+                <tr>
+                    <td style="font-family: Georgia; font-size: 18px; color:sandybrown;">Cutoff</td>
+                    <td style="font-family: Georgia; font-size: 18px; color:sandybrown; font-weight: bold;"><label id="getcutoff"/></td>
+                </tr>
+                <tr>
+                    <td style="font-family: Georgia; font-size: 18px; color:sandybrown;">Preferred Course</td>
+                    <td style="font-family: Georgia; font-size: 18px; color:sandybrown; font-weight: bold;"><label id="course"/></td>
+                </tr>
+            </table>
+            <input type="button" value="Confirm" onclick="toggleParagraph()"style="border-radius: 15px; width:150px; height:50px; font-size: 20px">
+            <p id="my-paragraph" style="display:none; font-family: Georgia; font-size: 30px; color:sandybrown; font-weight: bold;">Your response is recorded. You will be approached soon through phone.</p> 
+            <script type="application/javascript">
+                const urlParams=new URLSearchParams(window.location.search);
+                var studentname=urlParams.get('studentname');
+                var gender=urlParams.get("gender");
+                var dob=urlParams.get('dob');
+                var mail=urlParams.get('mail');
+                var cont=urlParams.get('cont');
+                var pm=Number(urlParams.get('txtpm'));
+                var cm=Number(urlParams.get('txtcm'));
+                var mm=Number(urlParams.get('txtmm'));
+                var course=urlParams.get('course');
+                const valueEl = document.getElementById('studentname');
+                const valueE2 = document.getElementById('gender');
+                const valueE3 = document.getElementById('dob');
+                const valueE4 = document.getElementById('mail');
+                const valueE5 = document.getElementById('cont');
+                const valueE6 = document.getElementById('getcutoff');
+                const valueE7 = document.getElementById('course');
+                valueEl.textContent=studentname;
+                valueE2.textContent=gender;
+                valueE4.textContent=mail;
+                valueE5.textContent=cont;
+                valueE6.textContent=(pm/2)+(cm/2)+mm;
+                valueE7.textContent=course;
+                dob=new Date(dob);
+                var yyyy = dob.getFullYear();
+                var mm = dob.getMonth() + 1; // Months start at 0!
+                var dd = dob.getDate();
+                if (dd < 10) dd = '0' + dd;
+                if (mm < 10) mm = '0' + mm;
+                var formattedToday = dd + '/' + mm + '/' + yyyy;
+                valueE3.textContent = formattedToday;
+                function toggleParagraph() {
+                var paragraph = document.getElementById("my-paragraph");
+                    if(paragraph.style.display === "none") 
+                    {
+                        paragraph.style.display = "block";
+                    } 
+                    else
+                    {
+                        paragraph.style.display = "none";
+                    } 
+                }
+           </script>
+           <iframe src="footer.html" name="iframe_footer" width="100%" height="240px" style="border: none;"></iframe>
+	</body>
+</html>
